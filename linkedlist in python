@@ -1,0 +1,53 @@
+class Node:
+
+    def __init__(self,data, nextNode=None):
+        self.data = int(data)
+        self.nextNode = nextNode
+
+    def getData(self):
+        return self.data
+
+
+    def setData(self, val):
+        self.data=val
+
+    def getNextNode(self):
+        return self.nextNode
+
+    def setNextNode(self, val):
+        self.nextNode = val
+
+
+class LinkedList:
+
+    def __init__(self, head=None):
+        self.head = head
+
+    def addNode(self, data):
+        newNode = Node(data, self.head)
+        self.head = newNode
+
+    def printNode(self):
+        tem = self.head
+        while tem:
+            print(tem.data,end=" ")
+            tem = tem.getNextNode()
+
+    def Coppy(self,r):
+        tem = self.head
+        while tem:
+            r.addNode(tem.data)
+            tem = tem.getNextNode()
+
+A=LinkedList()
+A.addNode(3)
+A.addNode(7)
+A.addNode(10)
+A.addNode(15)
+A.addNode(16)
+A.addNode(9)
+A.addNode(22)
+A.addNode(17)
+A.addNode(32)
+
+A.printNode()
